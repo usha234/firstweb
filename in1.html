@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style1.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <style>
+        h1 {
+            color: rgb(109, 109, 75);
+            text-align: center;
+        }
+    </style>
+
+<style>
+    body {
+      background-color: #f0f0f0;
+      transition: background-color 0.5s;
+    }
+  
+    .title {
+      font-size: 28px;
+      text-align: center;
+      padding: 20px;
+      background-color: #ffffff;
+      transition: background-color 0.5s, color 0.5s;
+    }
+  
+    .bright {
+      background-color: #ffffff;
+      color: #000000;
+    }
+  
+    .dark {
+      background-color: #333333;
+      color: #ffffff;
+    }
+  
+    .icon {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+  </style>
+  <script>
+    function toggleBrightness() {
+      const body = document.body;
+      const title = document.querySelector('.title');
+      const sunIcon = document.querySelector('.fa-sun');
+      const moonIcon = document.querySelector('.fa-moon');
+      
+      if (body.classList.contains('bright')) {
+        body.classList.remove('bright');
+        body.classList.add('dark');
+        title.classList.remove('bright');
+        title.classList.add('dark');
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'inline-block';
+      } else {
+        body.classList.remove('dark');
+        body.classList.add('bright');
+        title.classList.remove('dark');
+        title.classList.add('bright');
+        moonIcon.style.display = 'none';
+        sunIcon.style.display = 'inline-block';
+      }
+    }
+  </script>
+  <style>
+    /* Styles for the popup container */
+    .popup-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      display: none;
+    }
+  
+    /* Styles for the popup image */
+    .popup-image {
+      max-width: 170px;
+      height: 120px;
+    }
+  
+    /* Styles for the close button */
+    .close-button {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    // Function to show the popup after a delay
+    function showPopup() {
+      const popup = document.querySelector('.popup-container');
+      popup.style.display = 'block';
+    }
+  
+    // Function to close the popup
+    function closePopup() {
+      const popup = document.querySelector('.popup-container');
+      popup.style.display = 'none';
+    }
+  
+    // Wait for the page to load, then set a timeout to show the popup after 30 seconds
+    window.addEventListener('load', function() {
+      setTimeout(showPopup, 30000); // 30 seconds in milliseconds
+    });
+  </script>
+</head>
+
+<body class="bright">
+    <header>
+        <div class="nav">
+
+            <a href="#" class="logo">
+                <ion-icon name="happy"></ion-icon>
+                Fashion &nbsp;
+            
+            <button onclick="toggleBrightness()" style="padding: 10px 20px; font-size: 16px; background-color: #333333; color: #ffffff; border: none; border-radius: 5px; cursor: pointer;">
+                <i class="icon fas fa-sun" style="color: #ffbb00;"></i> <!-- Sun icon for light mode -->
+                <i class="icon fas fa-moon" style="color: #ffffff; display: none;"></i> <!-- Moon icon for dark mode -->
+              </button>
+            </a>
+    
+            <div class="box">
+                <div class="cart-count">0</div>
+                <ion-icon name="cart" id="cart-icon"></ion-icon>
+            </div>
+
+            <div class="cart bright">
+                <div class="cart-title">Cart Items</div>
+                <div class="cart-content">
+          
+                </div>
+
+                <div class="total">
+                    <div class="total-title">Total</div>
+                    <div class="total-price">Rs.0</div>
+                </div>
+
+                <button class="btn-buy">Place Order</button>
+
+                <ion-icon name="close" id="cart-close"></ion-icon>
+
+            </div>
+        </div>
+    </header>
+    <div class="b"></div>
+    <div class="container">
+       <center> <h2 class="title-bright">Discover Fashion</h2></center>
+
+        <!-- reco -->
+
+        <!-- <div style="display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;gap:10px" id="re"> -->
+
+        <div class="shop-content" id="re">
+
+        </div>
+
+        <div class="popup-container">
+            <span class="close-button bright" onclick="closePopup()">&times;</span>
+            <a href="#recomend">
+            <img src="https://static.vecteezy.com/system/resources/previews/000/265/806/large_2x/recommended-label-round-stamp-for-high-quality-products-vector.jpg"  alt="Popup Image" class="popup-image">
+        </a>  
+        </div>
+
+        <br>
+        <h1 id="wd" style="text-align: center;"> Womens Wear</h1>
+        <div class="shop-content wd">
+
+
+            <div class="sh-box">
+                <div class="pic">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvZrK-9ke5EEsL-fBZgIxKo2OvDGxq3nv-kw&usqp=CAU"
+                       class="sh-img">
+                </div>
+                <h2 class="sh-title">Plain Dress</h2>
+                <span class="sh-price bright">Rs.4000</span>
+                <div class="rating">
+                  <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                  <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                  <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                  <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                  <span class="rating-count bright">(4)</span>
+                </div>
+                <ion-icon name="cart" class="add-cart"></ion-icon>
+              </div>
+              
+
+
+            <div class="sh-box">
+                <div class="pic"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdmLwlfxahpygn8ePd2y9mIhY5drSOAYsvNw&usqp=CAU"
+                        class="sh-img"></div>
+                <h2 class="sh-title">Shine India</h2>
+                <span class="sh-price bright">Rs.6500</span>
+                <div class="rating">
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <span class="rating-count bright">(3)</span>
+                  </div>
+                <ion-icon name="cart" class="add-cart"></ion-icon>
+            </div>
+            <div class="sh-box">
+                <div class="pic"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZxenV3q8vb1I_5zEvW7vl2wjsQe84RzjGKDkQ3Qy4Wnc7_4nuSAMN-vGU3YZPrJJ3xTI&usqp=CAU"
+                        class="sh-img"></div>
+                <h2 class="sh-title">Lime road</h2>
+                <span class="sh-price bright">Rs.7000</span>
+                <div class="rating">
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <span class="rating-count bright">(4)</span>
+                  </div>
+                <ion-icon name="cart" class="add-cart"></ion-icon>
+            </div>
+
+
+            <div class="sh-box ">
+                <div class="pic"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpSUpOVPoQVHVsC1qOAIeMUy9IkX9TFfw_xw&usqp=CAU"
+                        class="sh-img"></div>
+                <h2 class="sh-title">India Mart</h2>
+                <span class="sh-price bright">Rs.3000</span>
+                <div class="rating">
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <span class="rating-count bright">(5)</span>
+                  </div>
+                <ion-icon name="cart" class="add-cart"></ion-icon>
+            </div>
+        </div>
+
+        <br>
+        <h1 id="mw" style="text-align: center;">Mens world</h1>
+        <div class="shop-content mw">
+            <div class="sh-box">
+                <div class="pic"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoUXziDjzrKjj9Ky4wv5iekOW03eSRllnzFg&usqp=CAU"
+                        class="sh-img"></div>
+                <h2 class="sh-title">Indian Mart</h2>
+                <span class="sh-price bright">Rs.4000</span>
+                <div class="rating">
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <span class="rating-count bright">(4)</span>
+                  </div>
+                <ion-icon name="cart" class="add-cart"></ion-icon>
+            </div>
+
+            <div class="sh-box">
+                <div class="pic"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj_qrnAWKrX1GHgfVzfQwFE1WhBTuEgPl9yA&usqp=CAU"
+                        class="sh-img"></div>
+                <h2 class="sh-title">Nisco bro's</h2>
+                <span class="sh-price bright">Rs.5500</span>
+                <div class="rating">
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <span class="rating-count bright">(4)</span>
+                  </div>
+                <ion-icon name="cart" class="add-cart"></ion-icon>
+            </div>
+            <div class="sh-box ">
+                <div class="pic"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9fG4l1j_ssv3SJp8JHeQpKzi2PkOFfcLUkg&usqp=CAU"
+                        class="sh-img"></div>
+                <h2 class="sh-title">Raymond</h2>
+                <span class="sh-price bright">Rs.6500</span>
+                <div class="rating">
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+
+                    <span class="rating-count bright">(5)</span>
+                  </div>
+                <ion-icon name="cart" class="add-cart"></ion-icon>
+            </div>
+
+
+            <div class="sh-box">
+                <div class="pic"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwLQaaMl-9HT-7Yhs6bnMvtNddhwa8vLhIhw&usqp=CAU"
+                        class="sh-img"></div>
+                <h2 class="sh-title">R20</h2>
+                <span class="sh-price bright">Rs.7000</span>
+                <div class="rating">
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <span class="rating-count bright">(4)</span>
+                  </div>
+                <ion-icon name="cart" class="add-cart"></ion-icon>
+            </div>
+        </div>
+
+<br>
+        <h1>Shoes </h1>
+        <div class="shop-content sh">
+
+
+            <div class="sh-box">
+                <div class="pic"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMw9wPwN2qcOYyCkJ4Z0kCVsIG8x4EyVodWA&usqp=CAU"
+                        class="sh-img"></div>
+                <h2 class="sh-title">Puma</h2>
+                <span class="sh-price bright">Rs.2500</span>
+                <div class="rating">
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <span class="rating-count bright">(4)</span>
+                  </div>
+                <ion-icon name="cart" class="add-cart"></ion-icon>
+            </div>
+
+            <div class="sh-box">
+                <div class="pic"><img
+                        src="https://tse1.mm.bing.net/th?id=OIP.7pxw--IH2LErEy8f0YziIQHaHa&pid=Api&P=0&h=220"
+                        class="sh-img"></div>
+                <h2 class="sh-title">Adidas</h2>
+                <span class="sh-price bright">Rs.1500</span>
+                <div class="rating">
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <span class="rating-count bright">(4)</span>
+                  </div>
+                <ion-icon name="cart" class="add-cart"></ion-icon>
+            </div>
+            <div class="sh-box">
+                <div class="pic"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC1oCFQ4cQ0BpNt0dCDMc81UzY6Qa7ZkeT7w&usqp=CAU"
+                        class="sh-img"></div>
+                <h2 class="sh-title">Bata</h2>
+                <span class="sh-price bright">Rs.650</span>
+                <div class="rating">
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <span class="rating-count bright">(3)</span>
+                  </div>
+                <ion-icon name="cart" class="add-cart"></ion-icon>
+            </div>
+
+
+            <div class="sh-box">
+                <div class="pic"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHesaTERFj8UAKbWBm3wO6RQARoo2nE2hBfQ&usqp=CAU"
+                        class="sh-img"></div>
+                <h2 class="sh-title">boat</h2>
+                <span class="sh-price bright">Rs.3500</span>
+                <div class="rating">
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+
+                    <span class="rating-count bright">(5)</span>
+                  </div>
+                <ion-icon name="cart" class="add-cart"></ion-icon>
+            </div>
+        </div>
+        <br>
+        <h1>Jewelarry</h1>
+
+
+
+        <div class="shop-content jb">
+
+
+
+            <div class="sh-box">
+                <div class="pic"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu_FR2-iG15zyQWWnCP7pDZITT-BFxukN1rQ&usqp=CAU"
+                        class="sh-img"></div>
+                <h2 class="sh-title">Kaz</h2>
+                <span class="sh-price bright">Rs.50000</span>
+                <div class="rating">
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+
+                    <span class="rating-count bright">(5)</span>
+                  </div>
+                <ion-icon name="cart" class="add-cart"></ion-icon>
+            </div>
+
+
+            <div class="sh-box">
+                <div class="pic"><img
+                        src="https://tse4.mm.bing.net/th?id=OIP.b_icGd5PofEZa0F32E1AjAHaHa&pid=Api&P=0&h=220"
+                        class="sh-img"></div>
+                <h2 class="sh-title">Mal</h2>
+                <span class="sh-price bright">Rs.65000</span>
+                <div class="rating">
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+
+                    <span class="rating-count bright">(4)</span>
+                  </div>
+                <ion-icon name="cart" class="add-cart"></ion-icon>
+            </div>
+            <div class="sh-box">
+                <div class="pic"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg1DEznWNLpI9lyyMpaprQzJt2a9KL20sZ1Q&usqp=CAU"
+                        class="sh-img"></div>
+                <h2 class="sh-title">Lalith</h2>
+                <span class="sh-price bright">Rs.75000</span>
+                <div class="rating">
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+
+                    <span class="rating-count bright">(4)</span>
+                  </div>
+                <ion-icon name="cart" class="add-cart"></ion-icon>
+            </div>
+
+
+            <div class="sh-box">
+                <div class="pic"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgSjbW_5V9rmxAW_a9Em5AlNGmJ3-U5kyqtQ&usqp=CAU"
+                        class="sh-img"></div>
+                <h2 class="sh-title">Chandhana</h2>
+                <span class="sh-price bright">Rs.60000</span>
+                <div class="rating">
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+                    <ion-icon name="star" class="rating-icon bright"></ion-icon>
+
+                    <span class="rating-count bright">(5)</span>
+                  </div>
+                <ion-icon name="cart" class="add-cart"></ion-icon>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
